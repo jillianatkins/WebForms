@@ -38,10 +38,10 @@ namespace WebFormsDemo.Pages
                 return false;
             }
             string input1 = ID.Text;
-            Match match1 = Regex.Match(input1, @"[1-9][1-9][1-9]$");
+            Match match1 = Regex.Match(input1, @"^[1-9][1-9][1-9]$");
             if (!match1.Success)
             {
-                ShowMessage("ID must be three non 0 digits long", "alert alert-info");
+                ShowMessage("ID must be three non 0 digits long", "alert alert-danger");
                 return false;
             }
             if (string.IsNullOrEmpty(Name.Text))
@@ -55,7 +55,7 @@ namespace WebFormsDemo.Pages
                 return false;
             }
             string input2 = Phone.Text;
-            Match match2 = Regex.Match(input2, @"[1-9][0-9][0-9][.][1-9][0-9][0-9][.][0-9][0-9][0-9][0-9]$");
+            Match match2 = Regex.Match(input2, @"^[1-9][0-9][0-9][.][1-9][0-9][0-9][.][0-9][0-9][0-9][0-9]$");
             if (!match2.Success)
             {
                 ShowMessage("Phone Number must be like 123.123.1234", "alert alert-danger");
